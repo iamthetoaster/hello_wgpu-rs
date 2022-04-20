@@ -1,5 +1,6 @@
 use std::{ops::Range, path::Path, u32};
 use anyhow::*;
+use log::info;
 use tobj::LoadOptions;
 use wgpu::util::DeviceExt;
 
@@ -75,6 +76,8 @@ impl Model {
             single_index: true,
             ..Default::default()
         })?;
+
+        info!("MATERIALS: \n[{:?}]\n\n", &obj_materials);
 
         let obj_materials = obj_materials?;
 
