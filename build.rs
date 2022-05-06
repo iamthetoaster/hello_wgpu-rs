@@ -4,7 +4,7 @@ use std::env;
 
 fn main() -> Result<()> {
     // Tells cargo to rebuild if items in res folder are changed
-    println!("cargo:rerun-if-changed=res/*");
+    println!("cargo:rerun-if-changed=res/");
 
     let out_dir = env::var("OUT_DIR")?;
     let mut copy_options = CopyOptions::new();
